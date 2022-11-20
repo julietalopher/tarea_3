@@ -156,6 +156,7 @@ Para la visualización de la tabla de datos se utiliza `datatable()` la función
 ```{r}
 #| label: tabla-felino
 #| eval: false
+#| include: true
 
 felinos |> 
   select(especie, provincia, localidad, fecha)|>
