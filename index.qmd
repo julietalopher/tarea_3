@@ -151,6 +151,18 @@ felinos <-
 
 ## 1. Registro de felinos en Costa Rica
 
+Para crear una tabla interactiva solo con los campos de interes utilizamos la función de `select()` del paquete de `dplyr`
+
+```{r}
+#| label: tabla-felino
+#| eval: false
+
+felinos_t <-
+  felinos |> 
+  select(especie, provincia, localidad, fecha)
+```
+
+
 Para la visualización de la tabla de datos se utiliza `datatable()` la función principal del paquete `DT`.
 
 ```{r}
@@ -158,8 +170,7 @@ Para la visualización de la tabla de datos se utiliza `datatable()` la función
 #| include: true
 #| echo: true
 
-felinos |> 
-  select(especie, provincia, localidad, fecha)|>
+felinos_t|>
   datatable(options = list(
     pageLength = 5,
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')),
